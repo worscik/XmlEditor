@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AvailableMappings implements MappingsService{
 
-    private List<String> availableMappings = new ArrayList<>();
+    private List<String> availableMappings;
 
     public AvailableMappings(List<String> availableMappings) {
         this.availableMappings = availableMappings;
