@@ -1,9 +1,9 @@
 {
-  "id":"",
+  "id":"jeden",
   "name": "",
-  "newProductKey": "",
-  "newProductValue": "",
-  "availableKey": "",
+  "newProductKey": "2",
+  "newProductValue": "3",
+  "availableKey": "4",
   "availableValue": "",
   "bestsellerKey": "",
   "bestsellerValue": "",
@@ -36,6 +36,6 @@
     "cuteFields":"TEST WYCINANIA"
   },
   "fieldsToBeMatch" : {
-    "cuteFields":"TEST MATCHER"
+    "matchFields":"TEST MATCHER"
   }
 }

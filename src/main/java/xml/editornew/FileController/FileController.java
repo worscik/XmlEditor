@@ -14,6 +14,7 @@ public class FileController {
 
     @PostMapping("/createXml")
     public String createXml(@RequestBody XmlFields xmlFields){
+
             if (xmlFields.getId() == null || xmlFields.getId().isEmpty()) {
             return "ID cannot be empty.";
             }

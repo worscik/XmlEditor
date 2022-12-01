@@ -1,5 +1,6 @@
 package xml.editornew.FileFields;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import xml.editornew.MappingController.MappingController;
 import xml.editornew.XmlCreator.FieldsToBeCut;
 import xml.editornew.XmlCreator.FieldsToBeMatch;
@@ -25,9 +26,9 @@ public class XmlFields {
     private String detail4;
     private String detail5;
     private String manufacturer;
-    private double price;
+    private String price;
     private String currency;
-    private double pricePromo;
+    private String pricePromo;
     private String quantity;
     private String urlProduct;
     private String genderKey;
@@ -188,11 +189,11 @@ public class XmlFields {
         this.manufacturer = manufacturer;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -204,11 +205,11 @@ public class XmlFields {
         this.currency = currency;
     }
 
-    public double getPricePromo() {
+    public String getPricePromo() {
         return pricePromo;
     }
 
-    public void setPricePromo(double pricePromo) {
+    public void setPricePromo(String pricePromo) {
         this.pricePromo = pricePromo;
     }
 
