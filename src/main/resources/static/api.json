@@ -28,5 +28,14 @@
   "urlCategoryMark": "",
   "popularity": "",
   "season": "",
-  "color": ""
+  "color": "",
+  "mappingController" : {
+    "mapping":"rrs/channel/item"
+  },
+  "fieldsToBeCut" : {
+    "cuteFields":"TEST WYCINANIA"
+  },
+  "fieldsToBeMatch" : {
+    "cuteFields":"TEST MATCHER"
+  }
 }

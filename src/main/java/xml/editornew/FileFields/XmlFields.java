@@ -1,6 +1,8 @@
 package xml.editornew.FileFields;
 
-import xml.editornew.MappingController.ChoosenMappings;
+import xml.editornew.MappingController.MappingController;
+import xml.editornew.XmlCreator.FieldsToBeCut;
+import xml.editornew.XmlCreator.FieldsToBeMatch;
 
 public class XmlFields {
 
@@ -38,6 +40,9 @@ public class XmlFields {
     private String intDetial1;
     private String intDetial2;
     private String decDetial1;
+    private FieldsToBeCut fieldsToBeCut;
+    private FieldsToBeMatch fieldsToBeMatch;
+    private MappingController mappingController;
 
     public String getId() {
         return id;
@@ -303,18 +308,27 @@ public class XmlFields {
         this.decDetial1 = decDetial1;
     }
 
-    public String requiredFeidlsChecker(String checkVariable){
-        if(checkVariable.isEmpty() || checkVariable == null) {
-            return checkVariable + " is empty or null. Check it out!";
-        }
-        return checkVariable;
+    public MappingController getMappingController() {
+        return mappingController;
     }
 
-    public String checkNotRequiredFields(String checkVariable){
-        if(checkVariable.isEmpty() || checkVariable == null) {
-            return checkVariable = "UNDEFINED";
-        }
-        return checkVariable;
+    public void setMappingController(MappingController mappingController) {
+        this.mappingController = mappingController;
     }
 
+    public FieldsToBeCut getFieldsToBeCut() {
+        return fieldsToBeCut;
+    }
+
+    public void setFieldsToBeCut(FieldsToBeCut fieldsToBeCut) {
+        this.fieldsToBeCut = fieldsToBeCut;
+    }
+
+    public FieldsToBeMatch getFieldsToBeMatch() {
+        return fieldsToBeMatch;
+    }
+
+    public void setFieldsToBeMatch(FieldsToBeMatch fieldsToBeMatch) {
+        this.fieldsToBeMatch = fieldsToBeMatch;
+    }
 }

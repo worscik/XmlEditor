@@ -1,21 +1,18 @@
 package xml.editornew.XmlCreator;
 
 import xml.editornew.FileFields.XmlFields;
-import xml.editornew.MappingController.ChoosenMappings;
+
+import java.util.logging.Logger;
 
 public class XmlFile {
 
     private XmlFields xmlFields;
-    private ChoosenMappings choosenMappings;
-    boolean createFile = true;
+    private String mapping;
+    boolean createFile = false;
 
-    public XmlFile(XmlFields xmlFields, ChoosenMappings choosenMappings) {
+    public XmlFile(XmlFields xmlFields, String mapping) {
         this.xmlFields = xmlFields;
-        if(choosenMappings.getChoosenMapping() == null){
-            System.out.println("Błąd w wybieraniu mapowania");
-            createFile = false;
-        }
-        this.choosenMappings = choosenMappings;
+        this.mapping = mapping;
     }
 
     public XmlFields getXmlFields() {
@@ -26,16 +23,20 @@ public class XmlFile {
         this.xmlFields = xmlFields;
     }
 
-    public ChoosenMappings getChoosenMappings() {
-        return choosenMappings;
+    public String getMapping() {
+        return mapping;
     }
 
-    public void setChoosenMappings(ChoosenMappings choosenMappings) {
-        this.choosenMappings = choosenMappings;
+    public void setMapping(String mapping) {
+        this.mapping = mapping;
     }
 
-    public StringBuilder create(XmlFields xmlFields){
+    public String create(XmlFields xmlFields){
         CreateXml createXml = new CreateXml();
-        return createXml.createNewXml(createFile,xmlFields,choosenMappings);
+        if(mapping == null) {
+            return "Cannot create xml. Selected mapping is not available.";
+        }
+        createFile = true;
+        return createXml.createNewXml(createFile,xmlFields,mapping);
     }
 }

@@ -1,15 +1,14 @@
 package xml.editornew.XmlCreator;
 
 import xml.editornew.FileFields.XmlFields;
-import xml.editornew.MappingController.ChoosenMappings;
+
 import static xml.editornew.XmlCreator.LineBuilder.*;
 
-public class CreateXml {
+public class CreateXml extends LineBuilder {
       StringBuilder sb = new StringBuilder();
-      LineBuilder linebuilder = new LineBuilder();
 
 
-    public StringBuilder createNewXml(boolean create, XmlFields field, ChoosenMappings choosenMappings){
+    public String createNewXml(boolean create, XmlFields field, String choosenMappings){
       sb.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + newLine);
       sb.append("<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\"" + newLine);
       sb.append("xmlns:g=\"http://base.google.com/ns/1.0\">" + newLine);
@@ -20,8 +19,8 @@ public class CreateXml {
       sb.append("<xsl:variable name=\"sep\"><xsl:text>&#x7f;</xsl:text></xsl:variable>" + newLine);
 
       //DO ZROBIENIA OSOBNA KLASE Z TYMI POLAMI
-      sb.append(RRSCHANNELDELETE + newLine); // WYCINANIE POL
-      sb.append(RRSCHANNELMATCH  + newLine); // MATCH
+      sb.append(field.getFieldsToBeCut().getCuteFields() + newLine); // WYCINANIE POL
+      sb.append(field.getFieldsToBeMatch().getMatchFields() + newLine); // MATCH
 
       sb.append("<!-- ustawienie zmiennych -->" + newLine);
 
@@ -200,7 +199,7 @@ public class CreateXml {
       sb.append("<xsl:value-of select=\"$newline\"/>" + newLine);
       sb.append("</xsl:template>" + newLine);
       sb.append("</xsl:stylesheet>" + newLine);
-      return sb;
+      return sb.toString();
    }
 
 }
