@@ -1,6 +1,5 @@
 package xml.editornew.FileFields;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import xml.editornew.MappingController.MappingController;
 import xml.editornew.XmlCreator.FieldsToBeCut;
 import xml.editornew.XmlCreator.FieldsToBeMatch;
@@ -332,4 +331,9 @@ public class XmlFields {
     public void setFieldsToBeMatch(FieldsToBeMatch fieldsToBeMatch) {
         this.fieldsToBeMatch = fieldsToBeMatch;
     }
+
+    public String checkIfTheFieldIsEmpty() {
+        return "UNDEFINED";
+    }
+
 }
