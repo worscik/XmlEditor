@@ -1,5 +1,6 @@
 package xml.editornew.FileFields;
 
+import org.jetbrains.annotations.NotNull;
 import xml.editornew.MappingController.MappingController;
 import xml.editornew.XmlCreator.FieldsToBeCut;
 import xml.editornew.XmlCreator.FieldsToBeMatch;
@@ -25,9 +26,9 @@ public class XmlFields {
     private String detail4;
     private String detail5;
     private String manufacturer;
-    private double price;
+    private String price;
     private String currency;
-    private double pricePromo;
+    private String pricePromo;
     private String quantity;
     private String urlProduct;
     private String genderKey;
@@ -37,9 +38,9 @@ public class XmlFields {
     private String popularity;
     private String season;
     private String color;
-    private String intDetial1;
-    private String intDetial2;
-    private String decDetial1;
+    private String intDetail1;
+    private String intDetail2;
+    private String intDetail3;
     private FieldsToBeCut fieldsToBeCut;
     private FieldsToBeMatch fieldsToBeMatch;
     private MappingController mappingController;
@@ -53,7 +54,7 @@ public class XmlFields {
     }
 
     public String getName() {
-        return name;
+        return checkIfTheFieldIsEmpty(name);
     }
 
     public void setName(String name) {
@@ -109,7 +110,7 @@ public class XmlFields {
     }
 
     public String getBrand() {
-        return brand;
+        return checkIfTheFieldIsEmpty(brand);
     }
 
     public void setBrand(String brand) {
@@ -117,7 +118,7 @@ public class XmlFields {
     }
 
     public String getCategories() {
-        return categories;
+            return checkIfTheFieldIsEmpty(categories);
     }
 
     public void setCategories(String categories) {
@@ -125,7 +126,7 @@ public class XmlFields {
     }
 
     public String getCategoryMain() {
-        return categoryMain;
+        return  checkIfTheFieldIsEmpty(categoryMain);
     }
 
     public void setCategoryMain(String categoryMain) {
@@ -133,7 +134,7 @@ public class XmlFields {
     }
 
     public String getDescription() {
-        return description;
+        return  checkIfTheFieldIsEmpty(description);
     }
 
     public void setDescription(String description) {
@@ -141,7 +142,7 @@ public class XmlFields {
     }
 
     public String getDetail1() {
-        return detail1;
+        return checkIfTheFieldIsEmpty(detail1);
     }
 
     public void setDetail1(String detail1) {
@@ -149,7 +150,7 @@ public class XmlFields {
     }
 
     public String getDetail2() {
-        return detail2;
+        return checkIfTheFieldIsEmpty(detail2);
     }
 
     public void setDetail2(String detail2) {
@@ -157,7 +158,7 @@ public class XmlFields {
     }
 
     public String getDetail3() {
-        return detail3;
+        return checkIfTheFieldIsEmpty(detail3);
     }
 
     public void setDetail3(String detail3) {
@@ -165,7 +166,7 @@ public class XmlFields {
     }
 
     public String getDetail4() {
-        return detail4;
+        return checkIfTheFieldIsEmpty(detail4);
     }
 
     public void setDetail4(String detail4) {
@@ -173,7 +174,7 @@ public class XmlFields {
     }
 
     public String getDetail5() {
-        return detail5;
+        return checkIfTheFieldIsEmpty(detail5);
     }
 
     public void setDetail5(String detail5) {
@@ -181,39 +182,41 @@ public class XmlFields {
     }
 
     public String getManufacturer() {
-        return manufacturer;
+        return checkIfTheFieldIsEmpty(manufacturer);
+
     }
 
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
     }
 
-    public double getPrice() {
-        return price;
+    @NotNull
+    public String getPrice() {
+        return checkIfTheFieldIsEmpty(price);
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
     public String getCurrency() {
-        return currency;
+        return checkIfTheFieldIsEmpty(currency);
     }
 
     public void setCurrency(String currency) {
         this.currency = currency;
     }
 
-    public double getPricePromo() {
-        return pricePromo;
+    public String getPricePromo() {
+        return checkIfTheFieldIsEmpty(pricePromo);
     }
 
-    public void setPricePromo(double pricePromo) {
+    public void setPricePromo(String pricePromo) {
         this.pricePromo = pricePromo;
     }
 
     public String getQuantity() {
-        return quantity;
+        return checkIfTheFieldIsEmpty(quantity);
     }
 
     public void setQuantity(String quantity) {
@@ -221,7 +224,7 @@ public class XmlFields {
     }
 
     public String getUrlProduct() {
-        return urlProduct;
+        return checkIfTheFieldIsEmpty(urlProduct);
     }
 
     public void setUrlProduct(String urlProduct) {
@@ -245,7 +248,7 @@ public class XmlFields {
     }
 
     public String getUrlCategory() {
-        return urlCategory;
+        return checkIfTheFieldIsEmpty(urlCategory);
     }
 
     public void setUrlCategory(String urlCategory) {
@@ -253,7 +256,7 @@ public class XmlFields {
     }
 
     public String getUrlCategoryMark() {
-        return urlCategoryMark;
+        return checkIfTheFieldIsEmpty(urlCategoryMark);
     }
 
     public void setUrlCategoryMark(String urlCategoryMark) {
@@ -261,7 +264,7 @@ public class XmlFields {
     }
 
     public String getPopularity() {
-        return popularity;
+        return checkIfTheFieldIsEmpty(popularity);
     }
 
     public void setPopularity(String popularity) {
@@ -269,7 +272,7 @@ public class XmlFields {
     }
 
     public String getSeason() {
-        return season;
+        return checkIfTheFieldIsEmpty(season);
     }
 
     public void setSeason(String season) {
@@ -277,35 +280,35 @@ public class XmlFields {
     }
 
     public String getColor() {
-        return color;
+        return checkIfTheFieldIsEmpty(color);
     }
 
     public void setColor(String color) {
         this.color = color;
     }
 
-    public String getIntDetial1() {
-        return intDetial1;
+    public String getIntDetail1() {
+        return checkIfTheFieldIsEmpty(intDetail1);
     }
 
-    public void setIntDetial1(String intDetial1) {
-        this.intDetial1 = intDetial1;
+    public void setIntDetail1(String intDetail1) {
+        this.intDetail1 = intDetail1;
     }
 
-    public String getIntDetial2() {
-        return intDetial2;
+    public String getIntDetail2() {
+        return checkIfTheFieldIsEmpty(intDetail2);
     }
 
-    public void setIntDetial2(String intDetial2) {
-        this.intDetial2 = intDetial2;
+    public void setIntDetail2(String intDetail2) {
+        this.intDetail2 = intDetail2;
     }
 
-    public String getDecDetial1() {
-        return decDetial1;
+    public String getIntDetail3() {
+        return checkIfTheFieldIsEmpty(intDetail3);
     }
 
-    public void setDecDetial1(String decDetial1) {
-        this.decDetial1 = decDetial1;
+    public void setIntDetail3(String intDetail3) {
+        this.intDetail3 = intDetail3;
     }
 
     public MappingController getMappingController() {
@@ -331,4 +334,12 @@ public class XmlFields {
     public void setFieldsToBeMatch(FieldsToBeMatch fieldsToBeMatch) {
         this.fieldsToBeMatch = fieldsToBeMatch;
     }
+
+    public String checkIfTheFieldIsEmpty(String variable) {
+        if(variable == null || variable.isEmpty()){
+            return variable = "UNDEFINED";
+        }
+        return variable;
+    }
+
 }
