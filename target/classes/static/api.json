@@ -1,0 +1,41 @@
+{
+  "id":"jeden",
+  "name": "",
+  "newProductKey": "2",
+  "newProductValue": "3",
+  "availableKey": "4",
+  "availableValue": "",
+  "bestsellerKey": "",
+  "bestsellerValue": "",
+  "brand": "",
+  "categories": "",
+  "categoryMain": "",
+  "description": "",
+  "detail1": "",
+  "detail2": "",
+  "detail3": "",
+  "detail4": "",
+  "detail5": "",
+  "manufacturer": "",
+  "price": "",
+  "currency": "",
+  "pricePromo": "",
+  "quantity": "",
+  "urlProduct": "",
+  "genderKey": "",
+  "genderValue": "",
+  "urlCategory": "",
+  "urlCategoryMark": "",
+  "popularity": "",
+  "season": "",
+  "color": "",
+  "mappingController" : {
+    "mapping":"rrs/channel/item"
+  },
+  "fieldsToBeCut" : {
+    "cuteFields":"TEST WYCINANIA"
+  },
+  "fieldsToBeMatch" : {
+    "matchFields":"TEST MATCHER"
+  }
+}
