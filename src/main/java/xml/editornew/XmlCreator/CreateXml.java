@@ -7,10 +7,6 @@ import static xml.editornew.XmlCreator.LineBuilder.*;
 public class CreateXml extends LineBuilder {
       StringBuilder sb = new StringBuilder();
 
-
-      // DO ZROBIENIA FOREACH KTORY SPRAWDZA CZY DANA WARTOSC MA POLE WYMAGANE I WTEDY GENERUJE SIE DLA NIEJ WARTOSC A
-  // JAK NIE TO ZOSTAWIAMY UNDEFINED
-
     public String createNewXml(boolean create, XmlFields field, String choosenMappings){
       sb.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + newLine);
       sb.append("<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\"" + newLine);
@@ -41,17 +37,17 @@ public class CreateXml extends LineBuilder {
 
       sb.append("<!--NEW_PRODUCT-->" + newLine);
       sb.append(choose + newLine);
-      sb.append("<xsl:whentest=\""+field.getNewProductKey()+"='" + field.getNewProductValue() +"'"+ "\">" + newLine);
+      sb.append("<xsl:when test=\""+field.getNewProductKey()+"='" + field.getNewProductValue() +"'"+ "\">" + newLine);
       sb.append(ZeroOrOne + newLine) ;
 
       sb.append("<!--AVAILABLE-->" + newLine);
       sb.append(choose + newLine);
-      sb.append("<xsl:whentest=\""+field.getAvailableKey()+"='" + field.getAvailableValue() +"'"+ "\">" + newLine);
+      sb.append("<xsl:when test=\""+field.getAvailableKey()+"='" + field.getAvailableValue() +"'"+ "\">" + newLine);
       sb.append(ZeroOrOne + newLine) ;
 
       sb.append("<!--BESTSELLER-->" + newLine);
       sb.append(choose + newLine);
-      sb.append("<xsl:whentest=\""+field.getBestsellerKey()+"='" + field.getBestsellerValue() +"'"+ "\">" + newLine);
+      sb.append("<xsl:when test=\""+field.getBestsellerKey()+"='" + field.getBestsellerValue() +"'"+ "\">" + newLine);
       sb.append(ZeroOrOne + newLine) ;
 
       sb.append("<!--BRAND-->" + newLine);
@@ -116,13 +112,13 @@ public class CreateXml extends LineBuilder {
 
       sb.append("<!--PRICE-->" + newLine);
       sb.append(choose + newLine);
-      sb.append("<xsl:whentest=\"string-length("+field.getPrice()+")\">" + newLine);
+      sb.append("<xsl:when test=\"string-length("+field.getPrice()+")\">" + newLine);
       sb.append("<xsl:value-ofselect=\"normalize-space(translate(" + field.getPrice() + ",'" + field.getCurrency()+"',''))\"/>" + newLine);
       sb.append(sameLineForFiled + newLine);
 
       sb.append("<!--PRICE_PROMO-->" + newLine);
       sb.append(choose + newLine);
-      sb.append("<xsl:whentest=\"string-length("+field.getPricePromo()+")\">" + newLine);
+      sb.append("<xsl:when test=\"string-length("+field.getPricePromo()+")\">" + newLine);
       sb.append("<xsl:value-ofselect=\"normalize-space(translate(" + field.getPricePromo() + ",'" + field.getCurrency()+"',''))\"/>" + newLine);
       sb.append(sameLineForFiled + newLine);
 
@@ -146,7 +142,7 @@ public class CreateXml extends LineBuilder {
 
       sb.append("<!--GENDER-->" + newLine);
       sb.append(choose + newLine);
-      sb.append("<xsl:whentest=\""+field.getGenderKey()+"='" + field.getGenderValue() +"'"+ "\">" + newLine);
+      sb.append("<xsl:when test=\""+field.getGenderKey()+"='" + field.getGenderValue() +"'"+ "\">" + newLine);
       sb.append(ZeroOrOne + newLine) ;
 
       sb.append("<!--URL_CATEGORY-->" + newLine);
