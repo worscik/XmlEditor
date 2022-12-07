@@ -25,10 +25,10 @@ public class FieldsToBeCut {
         this.additionalFieldToCut = additionalFieldToCut;
     }
 
-    public String fieldsToCut(String mapping){
+    public String setCutPath(String mapping){
         switch (mapping){
-            case  "rrr/channel/item" -> {
-                return cuteFields = "rrs/channel/TODO";
+            case  "rrs/channel/item" -> {
+                return cuteFields = "rss/channel/title | rss/channel/link | rss/channel/description";
             }
             case "root/item" -> {
                 return cuteFields = "root/item";

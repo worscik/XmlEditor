@@ -15,10 +15,10 @@ public class FieldsToBeMatch {
         this.matchFields = matchFields;
     }
 
-    public String fieldsToCut(String mapping){
+    public String setMatchPath(String mapping){
         switch (mapping){
-            case  "rrr/channel/item" -> {
-                return matchFields = "rrs/channel/item";
+            case  "rrs/channel/item" -> {
+                return matchFields = "rss/channel/item";
             }
             case "root/item" -> {
                 return matchFields = "root/item";

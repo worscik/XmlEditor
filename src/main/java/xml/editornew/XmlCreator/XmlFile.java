@@ -9,6 +9,8 @@ public class XmlFile {
     private XmlFields xmlFields;
     private String mapping;
     boolean createFile = false;
+    private FieldsToBeCut fieldsToBeCut = new FieldsToBeCut();
+    private FieldsToBeMatch fieldsToBeMatch = new FieldsToBeMatch();
 
     public XmlFile(XmlFields xmlFields, String mapping) {
         this.xmlFields = xmlFields;
@@ -36,7 +38,15 @@ public class XmlFile {
         if(mapping == null) {
             return "Cannot create xml. Selected mapping is not available.";
         }
+
+        try{
+            fieldsToBeCut.setCutPath(xmlFields.getMappingController().getMapping());
+            fieldsToBeMatch.setMatchPath(xmlFields.getMappingController().getMapping());
+        } catch (NullPointerException e){
+            return "Cannot set match or cut path";
+        }
+
         createFile = true;
-        return createXml.createNewXml(createFile,xmlFields,mapping);
+        return createXml.createNewXml(createFile,xmlFields,fieldsToBeCut,fieldsToBeMatch);
     }
 }
