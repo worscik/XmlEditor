@@ -1,9 +1,11 @@
 package xml.editornew.XmlCreator;
 
+import org.springframework.stereotype.Service;
 import xml.editornew.FileFields.XmlFields;
 
 import java.util.logging.Logger;
 
+@Service
 public class XmlFile {
 
     private XmlFields xmlFields;

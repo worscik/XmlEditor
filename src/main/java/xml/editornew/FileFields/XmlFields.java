@@ -31,6 +31,7 @@ public class XmlFields {
     private String pricePromo;
     private String quantity;
     private String urlProduct;
+    private String urlImg;
     private String genderKey;
     private String genderValue;
     private String urlCategory;
@@ -38,11 +39,15 @@ public class XmlFields {
     private String popularity;
     private String season;
     private String color;
+    private String addidtionalImage;
     private String intDetail1;
     private String intDetail2;
     private String intDetail3;
+    @NotNull
     private FieldsToBeCut fieldsToBeCut;
+    @NotNull
     private FieldsToBeMatch fieldsToBeMatch;
+    @NotNull
     private MappingController mappingController;
 
     public String getId() {
@@ -62,7 +67,7 @@ public class XmlFields {
     }
 
     public String getNewProductKey() {
-        return newProductKey;
+        return checkIfTheFieldIsEmpty(newProductKey);
     }
 
     public void setNewProductKey(String newProductKey) {
@@ -70,7 +75,7 @@ public class XmlFields {
     }
 
     public String getNewProductValue() {
-        return newProductValue;
+        return checkIfTheFieldIsEmpty(newProductValue);
     }
 
     public void setNewProductValue(String newProductValue) {
@@ -78,7 +83,7 @@ public class XmlFields {
     }
 
     public String getAvailableKey() {
-        return availableKey;
+        return checkIfTheFieldIsEmpty(availableKey);
     }
 
     public void setAvailableKey(String availableKey) {
@@ -86,7 +91,7 @@ public class XmlFields {
     }
 
     public String getAvailableValue() {
-        return availableValue;
+        return checkIfTheFieldIsEmpty(availableValue);
     }
 
     public void setAvailableValue(String availableValue) {
@@ -94,7 +99,7 @@ public class XmlFields {
     }
 
     public String getBestsellerKey() {
-        return bestsellerKey;
+        return checkIfTheFieldIsEmpty(bestsellerKey);
     }
 
     public void setBestsellerKey(String bestsellerKey) {
@@ -102,7 +107,7 @@ public class XmlFields {
     }
 
     public String getBestsellerValue() {
-        return bestsellerValue;
+        return checkIfTheFieldIsEmpty(bestsellerValue);
     }
 
     public void setBestsellerValue(String bestsellerValue) {
@@ -231,8 +236,16 @@ public class XmlFields {
         this.urlProduct = urlProduct;
     }
 
+    public String getUrlImg() {
+        return checkIfTheFieldIsEmpty(urlImg);
+    }
+
+    public void setUrlImg(String urlImg) {
+        this.urlImg = urlImg;
+    }
+
     public String getGenderKey() {
-        return genderKey;
+        return checkIfTheFieldIsEmpty(genderKey);
     }
 
     public void setGenderKey(String genderKey) {
@@ -240,7 +253,7 @@ public class XmlFields {
     }
 
     public String getGenderValue() {
-        return genderValue;
+        return checkIfTheFieldIsEmpty(genderValue);
     }
 
     public void setGenderValue(String genderValue) {
@@ -285,6 +298,14 @@ public class XmlFields {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String getAddidtionalImage() {
+        return checkIfTheFieldIsEmpty(addidtionalImage);
+    }
+
+    public void setAddidtionalImage(String addidtionalImage) {
+        this.addidtionalImage = addidtionalImage;
     }
 
     public String getIntDetail1() {

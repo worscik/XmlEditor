@@ -43,7 +43,7 @@ public class CreateXml extends LineBuilder {
 
       sb.append("<!--BESTSELLER-->" + NEWLINE);
       sb.append(CHOOSE + NEWLINE);
-      sb.append("<xsl:when test=\""+field.getBestsellerKey()+"='" + field.getBestsellerValue() +"'"+ "\">" + NEWLINE);
+      sb.append("<xsl:when test=\""+field.getBestsellerValue()+"='" + field.getBestsellerKey() +"'"+ "\">" + NEWLINE);
       sb.append(NUMERICPATH + NEWLINE) ;
 
       sb.append("<!--BRAND-->" + NEWLINE);
@@ -109,13 +109,13 @@ public class CreateXml extends LineBuilder {
       sb.append("<!--PRICE-->" + NEWLINE);
       sb.append(CHOOSE + NEWLINE);
       sb.append("<xsl:when test=\"string-length("+field.getPrice()+")\">" + NEWLINE);
-      sb.append("<xsl:value-ofselect=\"normalize-space(translate(" + field.getPrice() + ",'" + field.getCurrency()+"', ''))\"/>" + NEWLINE);
+      sb.append("<xsl:value-of select=\"normalize-space(translate(" + field.getPrice() + ",'" + field.getCurrency()+"', ''))\"/>" + NEWLINE);
       sb.append(STRINGPATH + NEWLINE);
 
       sb.append("<!--PRICE_PROMO-->" + NEWLINE);
       sb.append(CHOOSE + NEWLINE);
       sb.append("<xsl:when test=\"string-length("+field.getPricePromo()+")\">" + NEWLINE);
-      sb.append("<xsl:value-ofselect=\"normalize-space(translate(" + field.getPricePromo() + ",'" + field.getCurrency()+"', ''))\"/>" + NEWLINE);
+      sb.append("<xsl:value-of select=\"normalize-space(translate(" + field.getPricePromo() + ",'" + field.getCurrency()+"', ''))\"/>" + NEWLINE);
       sb.append(STRINGPATH + NEWLINE);
 
       sb.append("<!--QUANTITY-->" + NEWLINE);
@@ -132,8 +132,8 @@ public class CreateXml extends LineBuilder {
 
       sb.append("<!--URL_IMG-->" + NEWLINE);
       sb.append(CHOOSE + NEWLINE);
-      sb.append("<xsl:when test=\"string-length(" + field.getUrlProduct() + ")\">" + NEWLINE); // URL_IMG
-      sb.append("<xsl:value-of select=\"substring(normalize-space(" + field.getUrlProduct() + "),0,512)\"/>" + NEWLINE); // URL_IMG
+      sb.append("<xsl:when test=\"string-length(" + field.getUrlImg() + ")\">" + NEWLINE); // URL_IMG
+      sb.append("<xsl:value-of select=\"substring(normalize-space(" + field.getUrlImg() + "),0,512)\"/>" + NEWLINE); // URL_IMG
       sb.append(STRINGPATH + NEWLINE);
 
       sb.append("<!--GENDER-->" + NEWLINE);
@@ -173,8 +173,8 @@ public class CreateXml extends LineBuilder {
       
       sb.append("<!--ADDITIONAL_IMAGE-->" + NEWLINE);
       sb.append(CHOOSE + NEWLINE);
-      sb.append("<xsl:when test=\"string-length(" + field.getName() + ")\">" + NEWLINE); // ADDITIONAL_IMAGE
-      sb.append("<xsl:value-of select=\"substring(normalize-space(" + field.getName() + "),0,128)\"/>" + NEWLINE); // ADDITIONAL_IMAGE
+      sb.append("<xsl:when test=\"string-length(" + field.getAddidtionalImage() + ")\">" + NEWLINE); // ADDITIONAL_IMAGE
+      sb.append("<xsl:value-of select=\"substring(normalize-space(" + field.getAddidtionalImage() + "),0,128)\"/>" + NEWLINE); // ADDITIONAL_IMAGE
       sb.append(STRINGPATH + NEWLINE);
       
       sb.append(LASTLINE);
