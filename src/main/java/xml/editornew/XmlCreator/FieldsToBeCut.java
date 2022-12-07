@@ -4,6 +4,8 @@ public class FieldsToBeCut {
 
     private String cuteFields;
 
+    private String additionalFieldToCut;
+
     public FieldsToBeCut() {
     }
 
@@ -15,8 +17,24 @@ public class FieldsToBeCut {
         this.cuteFields = cuteFields;
     }
 
-    public String fieldsToCut(String fieldToBeCute){
-        return "fields";
+    public String getAdditionalFieldToCut() {
+        return additionalFieldToCut;
+    }
+
+    public void setAdditionalFieldToCut(String additionalFieldToCut) {
+        this.additionalFieldToCut = additionalFieldToCut;
+    }
+
+    public String fieldsToCut(String mapping){
+        switch (mapping){
+            case  "rrr/channel/item" -> {
+                return cuteFields = "rrs/channel/TODO";
+            }
+            case "root/item" -> {
+                return cuteFields = "root/item";
+            }
+        }
+            return "Cannot find fileds to cute";
     }
 
 }
